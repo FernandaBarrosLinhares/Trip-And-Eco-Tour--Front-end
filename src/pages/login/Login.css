@@ -1,0 +1,79 @@
+.container {
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('https://media.istockphoto.com/id/1296886636/pt/foto/aerial-drone-view-of-the-beautiful-small-island-and-palm-trees-of-atlantic-ocean-cayo.jpg?s=2048x2048&w=is&k=20&c=dTDbtNmfRRQ0Or0NuMHLzXTYHGd1E_P1vBCClFys7Xo=');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+.formulario, h6 {
+    background-color:white;
+    opacity: 0.8;
+    color: #585671;
+    border-radius: 10px;
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-floating {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 250px;
+    align-items: center;
+    color: #605959;
+}
+
+
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input.form-control {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-floating {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-floating {
+        width: 100%;
+    }
+}
+p .btn-link {
+    margin-left: 10px; 
+}
