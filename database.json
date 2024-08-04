@@ -1,0 +1,49 @@
+{
+  "usuarios": [
+    {
+      "id": "d61f",
+      "nome": "Fernanda Linhares",
+      "email": "devfernandalinhares@gmail.com",
+      "sexo": "feminino",
+      "cpf": "98765826712",
+      "dataNascimento": "31/05/1980",
+      "senha": "******"
+    },
+    {
+      "id": "4992",
+      "nome": "Marcelo Kaique Luís Campos",
+      "email": "marcelo-campos@gmail.com",
+      "sexo": "masculino",
+      "cpf": "98765826712",
+      "dataNascimento": "15/01/1998",
+      "senha": "marcelo84"
+    },
+    {
+      "id": "0245",
+      "nome": "Robison Stulp",
+      "email": "bob@hotmail.com",
+      "sexo": "masculino",
+      "cpf": "98736557898",
+      "dataNascimento": "08/02/1975",
+      "senha": "698745"
+    },
+    {
+      "id": "7825",
+      "nome": "Guilherme Barros",
+      "email": "guisales@tribetour.com",
+      "sexo": "masculino",
+      "cpf": "36578941202",
+      "dataNascimento": "17/05/2017",
+      "senha": "11111111"
+    },
+    {
+      "id": "4529",
+      "nome": "Julia Andrade Souza",
+      "email": "juandrade@softplan.com.br",
+      "sexo": "feminino",
+      "cpf": "65478932102",
+      "dataNascimento": "06/12/2005",
+      "senha": "321654"
+    }
+  ]
+}

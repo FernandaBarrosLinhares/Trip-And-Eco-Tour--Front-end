@@ -1,0 +1,24 @@
+.cep{
+    width: 15%;
+}
+
+.numero{
+    width: 5%;
+}
+
+
+.rua{
+    width: 30%;
+}
+
+.bairro{
+    width: 15%;
+}
+
+.cidade{
+    width: 20%;
+}
+
+.estado{
+    width: 5%;
+}
