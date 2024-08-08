@@ -1,29 +1,34 @@
-import {Routes, Route, BrowserRouter} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import CadastroUsuario from "../pages/cadastroUsuario/CadastroUsuario"
 import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
-import Login from "../pages/login/Login"
 
+import Login from "../pages/login/Login"
+// import { TemplatePrivateRouter } from "../templates/private-route"
 
 function RoutesApp(){
     return(
         <>
-        <BrowserRouter>
+    
         <Routes>
+
+            {/* Rotas publicas */}
             <Route path="/" element={<Login/>} />
             <Route path="/login" element={<Login/>} /> 
             <Route path="/cadastroUsuario" element={<CadastroUsuario/>} /> 
-            <Route path="/cadastroDestino" element={<CadastroDestino/>} />
+
+            <Route path="/cadastroDestino" element={<CadastroDestino/>} /
+           
+            
+
          
         </Routes>
         
-        </BrowserRouter>
+        
         </>
     )
 }
 
 export default RoutesApp
-
-
 
 
 
