@@ -1,6 +1,6 @@
 import {Routes, Route, BrowserRouter} from "react-router-dom"
 import CadastroUsuario from "../pages/cadastroUsuario/CadastroUsuario"
-// import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
+import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
 import Login from "../pages/login/Login"
 
 
@@ -12,7 +12,7 @@ function RoutesApp(){
             <Route path="/" element={<Login/>} />
             <Route path="/login" element={<Login/>} /> 
             <Route path="/cadastroUsuario" element={<CadastroUsuario/>} /> 
-            {/* <Route path="/cadastroDestino" element={<CadastroDestino/>} /> */}
+            <Route path="/cadastroDestino" element={<CadastroDestino/>} />
          
         </Routes>
         
