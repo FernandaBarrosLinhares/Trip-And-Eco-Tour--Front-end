@@ -96,7 +96,7 @@ const EnderecoComponent = () => {
           type="text"
           id="estado"
           className="form-control"
-          placeholder=""
+          placeholder="Estado"
           value={endereco.uf}
           readOnly
         />
