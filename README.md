@@ -1,8 +1,65 @@
-# React + Vite
+# Trip And Eco Tour
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Trip and Eco Tour, é uma plataforma que visa promover viagens sustentáveis e experiências positivas para os usuários, fornecendo acesso a informações sobre destinos turísticos, praias, atrações naturais e atividades recreativas. Os usuários podem explorar e descobrir novos destinos, encontrar dicas de viagem sustentável e compartilhar suas experiências.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- <img alt="Tela1" src=""> -->
+
+
+### Trabalho de conclusão de módulo do curso Analista de desenvolvimento web- Senai SC
+## Tecnologia ultilizadas
+
+-Versionamento: Uso do GitHub para versionamento de código.
+
+-HTML: Tags e Elementos semânticos
+
+-CSS: Seletores, Principais estilos, Layouts e Flexbox
+
+-JavaScript: Variáveis, Tipos de dados, Operadores, 
+
+-Manipulação do DOM, Estrutura de Controle de Fluxo, 
+
+-Funções, Eventos, JSON, LocalStorage, Interval, Timeout, -Operadores Rest e Spread, Módulos, Arrow Functions, -Funções de Arrays, Funções Assíncronas e Fetch.
+
+-React: Renderização de componentes, Props, Proptypes,
+
+-Hooks, Eventos, Renderização de listas, React Router,
+
+ -Formulários, Prop Drilling, Composition, Estilos (Material UI e Bootstrap), Developer Tools e Deploy.
+
+-Skills: Organização, criação de documentação e apresentação de solução.
+
+## Como rodar o projeto
+
+#### Clone este repositório em sua máquina local:
+
+git clone https://github.com/FernandaBarrosLinhares/Trip-And-Eco-Tour--Front-end
+
+
+npm insttall
+npm dev run
+
+## Melhorias
+
+Integração com o back -end desenvolvido na conclusão do primeiro módulo.
+
+Responsividade
+
+
+
+## Desenvolvedora
+
+- Fernanda Linhares (https://www.linkedin.com/in/fernanda-linhares-b10ba32b/)
+
+
+
+
+
+
+
+
+
+
+
+
+
