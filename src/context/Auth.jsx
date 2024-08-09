@@ -11,8 +11,9 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
     async function signIn({ email, password }) {
+        console.log('signIn')
         try {
-            const response = await fetch(`${API_URL}/users?email=${email}&password=${password}`);
+            const response = await fetch(`${API_URL}users?email=${email}&password=${password}`);
             if (!response.ok) {
                 throw new Error('Erro na resposta da API');
             }

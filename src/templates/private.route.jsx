@@ -1,5 +1,6 @@
 import { Outlet , Navigate} from "react-router-dom";
 import { useAuth } from '../context/Auth'
+import Menu from '../components/menu/Menu'
 
 
 
@@ -10,7 +11,7 @@ export function TemplatePrivateRouter(){
 
     return user ?(
         <div>
-          
+            <Menu/>
             <main>
                 <Outlet/>
             </main>

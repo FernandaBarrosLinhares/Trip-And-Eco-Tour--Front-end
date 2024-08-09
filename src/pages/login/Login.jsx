@@ -12,12 +12,14 @@ const { signIn } = useAuth();
 const navigate = useNavigate();
 
     async function onSubmit(dados) {
-      
+        console.log(dados)
     
         signIn(dados);
        
         navigate('/dashboard');
     }   
+
+  
     return(
         
         <>
@@ -67,7 +69,7 @@ const navigate = useNavigate();
                     
                     <p className='cadastro'>
                         Não possui cadastro? 
-                    <Link className='btn-link' to='/login'>
+                    <Link className='btn-link' to='/cadastrousuario'>
                         <button className='btn btn-outline-primary'>Cadastrar</button>
                     </Link>
                     </p>
