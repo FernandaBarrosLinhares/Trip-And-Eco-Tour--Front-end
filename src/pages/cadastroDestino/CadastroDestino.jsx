@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import Endereco from '../../components/endereco/Endereco';
 import CoordenadasGeograficas from '../../components/CoordenadaGeografica';
+import {useAuth} from '../../context/Auth'
 import './CadastroDestino.css';
 
 function CadastroDestino() {
@@ -8,16 +9,20 @@ function CadastroDestino() {
     const { register, handleSubmit, setValue, formState } = useForm();
     const { errors, isSubmitting } = formState;
 
-   
+    const { user } = useAuth(); 
 
     async function addDestinys(dados) {
         try {
+            const dadosCompletos = {
+                ...dados,
+                userId: user?.id 
+            };
             const resposta = await fetch('http://localhost:3000/destinys', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(dados),
+                body: JSON.stringify(dadosCompletos),
             });
 
             if (!resposta.ok) {
