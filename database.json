@@ -46,78 +46,22 @@
       "senha": "321654"
     }
   ],
-  "destiny": [
+  "destinys": [
     {
-      "id": "87b8",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "04cc",
+      "nome": "Praia do Santinho",
+      "descricao": "Pratica de surf e trilhas",
+      "localizacao": "Santinho",
+      "latitude": "-27.4637465",
+      "longitude": "-48.3809636"
     },
     {
-      "id": "65bf",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "fd27",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "dda3",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "7797",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "76b4",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "7512",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "2447",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "df19",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "0dda",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "feee",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "3b67",
+      "id": "ea32",
       "nome": "Trilha do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "descricao": "trilha facil, com cobertura vegetal",
+      "localizacao": "Praia da Solidão",
+      "latitude": "-27.7866526",
+      "longitude": "-48.5307013"
     }
   ]
 }
