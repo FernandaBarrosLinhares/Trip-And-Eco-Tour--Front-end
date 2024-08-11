@@ -1,9 +1,7 @@
-
 import { useState, useEffect } from "react";
-import './Endereco.css'
+import './Endereco.css';
 
-
-const EnderecoComponent = () => {
+const Endereco = () => {
   const [cep, setCep] = useState('');
   const [endereco, setEndereco] = useState({
     logradouro: '',
@@ -19,11 +17,11 @@ const EnderecoComponent = () => {
         .then((response) => response.json())
         .then((data) => {
           setEndereco({
-            logradouro: data.logradouro,
-            complemento: data.complemento,
-            bairro: data.bairro,
-            localidade: data.localidade,
-            uf: data.uf
+            logradouro: data.logradouro || '',
+            complemento: data.complemento || '',
+            bairro: data.bairro || '',
+            localidade: data.localidade || '',
+            uf: data.uf || ''
           });
         })
         .catch((error) => console.error("Erro ao buscar o CEP:", error));
@@ -54,7 +52,7 @@ const EnderecoComponent = () => {
           id="logradouro"
           className="form-control"
           placeholder="Rua"
-          value={endereco.logradouro}
+          value={endereco.logradouro || ''}
           readOnly
         />
       </div>
@@ -67,7 +65,6 @@ const EnderecoComponent = () => {
           placeholder="Número"
         />
       </div>
-
       <div className="mb-3 form-group bairro">
         <label htmlFor="bairro" className="form-label">Bairro</label>
         <input
@@ -75,7 +72,7 @@ const EnderecoComponent = () => {
           id="bairro"
           className="form-control"
           placeholder="Bairro"
-          value={endereco.bairro}
+          value={endereco.bairro || ''}
           readOnly
         />
       </div>
@@ -86,7 +83,7 @@ const EnderecoComponent = () => {
           id="cidade"
           className="form-control"
           placeholder="Cidade"
-          value={endereco.localidade}
+          value={endereco.localidade || ''}
           readOnly
         />
       </div>
@@ -97,7 +94,7 @@ const EnderecoComponent = () => {
           id="estado"
           className="form-control"
           placeholder="Estado"
-          value={endereco.uf}
+          value={endereco.uf || ''}
           readOnly
         />
       </div>
@@ -105,4 +102,5 @@ const EnderecoComponent = () => {
   );
 };
 
-export default EnderecoComponent;
+export default Endereco
+
