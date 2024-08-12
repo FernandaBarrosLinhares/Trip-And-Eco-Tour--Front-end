@@ -34,7 +34,7 @@
       "sexo": "masculino",
       "cpf": "36578941202",
       "dataNascimento": "17/05/2017",
-      "senha": "11111111"
+      "senha": "123"
     },
     {
       "id": "4529",
@@ -65,15 +65,7 @@
       "longitude": "-48.5354589",
       "userId": "d61f"
     },
-    {
-      "id": "5d3a",
-      "nome": "Praia do Santinho",
-      "descricao": "Pratica de surf e trilhas",
-      "localizacao": "Santinho",
-      "latitude": "",
-      "longitude": "",
-      "userId": "7825"
-    },
+
     {
       "id": "835e",
       "nome": "Praia do Santinho",
@@ -82,6 +74,46 @@
       "latitude": "-27.4637465",
       "longitude": "-48.3809636",
       "userId": "7825"
+    },
+    {
+      "id": "c403",
+      "nome": "Costa da Lagoa",
+      "descricao": "Acesso barco ou trilha",
+      "localizacao": "Lagoa da Conceição",
+      "latitude": "-27.6010288",
+      "longitude": "-48.4731801"
+    },
+    {
+      "id": "55b6",
+      "nome": "Costa da Lagoa",
+      "descricao": "Acesso barco ou trilha",
+      "localizacao": "Lagoa da Conceição",
+      "latitude": "-27.6010288",
+      "longitude": "-48.4731801"
+    },
+    {
+      "id": "3506",
+      "nome": "Ilha de Anhatomirim",
+      "descricao": "Edificação e mergulho com golfinhos",
+      "localizacao": "Governador Celso Ramos",
+      "latitude": "-19.8336348",
+      "longitude": "-44.1482772"
+    },
+    {
+      "id": "1703",
+      "nome": "Ilha de Anhatomirim",
+      "descricao": "Edificação e mergulho com golfinhos",
+      "localizacao": "Governador Celso Ramos",
+      "latitude": "-19.8336348",
+      "longitude": "-44.1482772"
+    },
+    {
+      "id": "6fb7",
+      "nome": "Ilha de Anhatomirim",
+      "descricao": "Edificação e mergulho com golfinhos",
+      "localizacao": "Governador Celso Ramos",
+      "latitude": "-19.8336348",
+      "longitude": "-44.1482772"
     }
   ]
 }

@@ -7,11 +7,9 @@ import './Dashboard.css'
 
 function DashBoard(){
 
-const dados = useAuth()
-console.log(dados.signIn)
-
-const [locais,setLocais]=useState([])
-
+const {user} = useAuth();
+const [locais,setLocais]=useState([]);
+const [usuarios,setUsuarios]=useState([0]);
 
 
 
@@ -19,7 +17,7 @@ useEffect(()=>{
 
    async function  buscarLocais(){
     try {
-        const response = await fetch('http://localhost:3000/destiny');
+        const response = await fetch('http://localhost:3000/destinys');
         if (response.ok) {
             const data = await response.json();
             setLocais(data);
@@ -30,7 +28,22 @@ useEffect(()=>{
         console.error('Erro ao buscar locais', error);
     }
    }
+
+   async function buscarUsuarios() {
+    try {
+        const response = await fetch('http://localhost:3000/users'); 
+        if (response.ok) {
+            const data = await response.json();
+            setUsuarios(data.length); 
+        } else {
+            console.error('Erro ao buscar usuários');
+        }
+    } catch (error) {
+        console.error('Erro ao buscar usuários', error);
+    }
+}
    buscarLocais();
+   buscarUsuarios();
     }, []);
 
 
@@ -46,12 +59,12 @@ useEffect(()=>{
                 <div className='container-cards'>
                     <div className="card-user">
                             <span>Usuários</span>
-                            <span>1</span>
+                            <span>{usuarios}</span>
                             <img src='' />
                     </div>
                     <div className="card-destiny">
                             <span>Destinos</span>
-                            <span>1</span>
+                            <span>{locais.length}</span>
                             <img src='' />
                     </div>
                 
