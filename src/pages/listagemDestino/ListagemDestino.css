@@ -1,0 +1,48 @@
+.container-listagem {
+    display: flex;
+    height: 100vh;
+}
+
+.listagem-container {
+    flex: 1; /* Ocupa o restante do espaço ao lado do menu */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #edf2f0; 
+    color: #0e0d0d;
+}
+
+.titulo-listagem {
+    margin-bottom: 20px;
+    color: #191b1c; 
+    font-size: 1.5rem;
+}
+
+.table-destinos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-destinos th, .table-destinos td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    color: #ddd;
+}
+
+.table-destinos th {
+    background-color: #2e5cba; /* Fundo escuro para cabeçalhos */
+    color:#ddd;
+    font-weight: bold;
+}
+
+.table-destinos tr:nth-child(even) {
+    background-color: #47cb9f;
+}
+
+.table-destinos tr:hover {
+    background-color: #444c56;
+}
+
+.table-destinos tr:hover td {
+    color: #fff;
+}
