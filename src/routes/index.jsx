@@ -1,6 +1,7 @@
 import {Routes, Route} from "react-router-dom"
 import CadastroUsuario from "../pages/cadastroUsuario/CadastroUsuario"
 import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
+import ListagemDestino from "../pages/listagemDestino/ListagemDestino"
 import Dashboard from'../pages/dashboard/Dashboard'
 // import { TemplatePrivateRouter } from "../templates/private.route"
 
@@ -25,6 +26,7 @@ function RoutesApp(){
             {/* </Route> */}
 
             <Route path="/cadastroDestino" element={<CadastroDestino/>} />
+            <Route path="/listagemDestino" element={<ListagemDestino/>} />
            
             
 
