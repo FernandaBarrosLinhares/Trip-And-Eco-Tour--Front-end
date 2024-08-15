@@ -7,7 +7,7 @@
       "sexo": "feminino",
       "cpf": "98765826712",
       "dataNascimento": "31/05/1980",
-      "senha": "******"
+      "senha": "123456"
     },
     {
       "id": "4992",
@@ -65,7 +65,6 @@
       "longitude": "-48.5354589",
       "userId": "d61f"
     },
-
     {
       "id": "835e",
       "nome": "Praia do Santinho",
@@ -114,6 +113,41 @@
       "localizacao": "Governador Celso Ramos",
       "latitude": "-19.8336348",
       "longitude": "-44.1482772"
+    },
+    {
+      "id": "94c3",
+      "nome": "Parque Unipraia",
+      "descricao": "Brinquedos radicais",
+      "localizacao": "Balneário Camboriu",
+      "latitude": "-26.9985781",
+      "longitude": "-48.5899309"
+    },
+    {
+      "id": "9d0e",
+      "nome": "Dunas da Joaquina",
+      "descricao": "Pratica de surf e trilhas",
+      "localizacao": "Praia da Joaquina",
+      "latitude": "-27.6343625",
+      "longitude": "-48.45429512946963",
+      "userId": "d61f"
+    },
+    {
+      "id": "ff54",
+      "nome": "Dunas da Joaquina",
+      "descricao": "Pratica de surf e trilhas",
+      "localizacao": "Praia da Joaquina",
+      "latitude": "-27.6343625",
+      "longitude": "-48.45429512946963",
+      "userId": "d61f"
+    },
+    {
+      "id": "7669",
+      "nome": "Praia dos Ingleses",
+      "descricao": "Pratica de surf e trilhas",
+      "localizacao": "Ingleses",
+      "latitude": "-27.6343625",
+      "longitude": "-48.45429512946963",
+      "userId": "d61f"
     }
   ]
 }

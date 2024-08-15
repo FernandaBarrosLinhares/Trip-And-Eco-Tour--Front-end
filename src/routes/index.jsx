@@ -3,6 +3,7 @@ import CadastroUsuario from "../pages/cadastroUsuario/CadastroUsuario"
 import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
 import ListagemDestino from "../pages/listagemDestino/ListagemDestino"
 import Dashboard from'../pages/dashboard/Dashboard'
+
 // import { TemplatePrivateRouter } from "../templates/private.route"
 
 
@@ -18,17 +19,23 @@ function RoutesApp(){
             {/* Rotas publicas */}
             <Route path="/" element={<Login/>} />
             <Route path="/login" element={<Login/>} /> 
-            <Route path="/cadastroUsuario" element={<CadastroUsuario/>} /> 
+            <Route path="/cadastrousuario" element={<CadastroUsuario/>} /> 
 
 
-            {/* <Route path="/dashboard" element={<TemplatePrivateRouter/>}> */}
-                <Route path="/dashboard" element={<Dashboard />}/>
-            {/* </Route> */}
+             {/* Rotas privadas */}
 
-            <Route path="/cadastroDestino" element={<CadastroDestino/>} />
-            <Route path="/listagemDestino" element={<ListagemDestino/>} />
-           
+             {/* <Route element={<TemplatePrivateRouter/>}>
+             <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard/cadastrodestino" element={<CadastroDestino />} /> 
+                    <Route path="/dashboard/listagemdestino" element={<ListagemDestino />} /> 
+            </Route> */}
             
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/cadastrodestino" element={<CadastroDestino />} />
+            <Route path="/listagemdestino" element={<ListagemDestino />} />
+
+
+       
 
          
         </Routes>

@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import Endereco from '../../components/endereco/Endereco';
-import CoordenadasGeograficas from '../../components/CoordenadaGeografica';
+// import CoordenadasGeograficas from '../../components/CoordenadaGeografica';
+import MenuComponent from '../../components/menu/Menu';
 import {useAuth} from '../../context/Auth'
 import './CadastroDestino.css';
 
@@ -36,6 +37,9 @@ function CadastroDestino() {
     return (
         <>
             <main className="picture-container-destino">
+                <div className= 'container-menu'>
+                    <MenuComponent/>
+                </div>
                 <div className="form-container-destino">
                     <form onSubmit={handleSubmit(addDestinys)}>
                         <h3 className="titlle mb-3 fw-normal">Preencha todos os campos para adicionar destino!</h3>
@@ -93,7 +97,7 @@ function CadastroDestino() {
 
                             <Endereco/>
 
-                            <CoordenadasGeograficas register={register} setValue={setValue} />
+                            {/* <CoordenadasGeograficas register={register} setValue={setValue} /> */}
                         </div>
 
                         <button className="btn btn-success" type="submit" disabled={isSubmitting}>

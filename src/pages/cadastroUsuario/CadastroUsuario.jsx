@@ -47,14 +47,9 @@ function CadastroUsuario(){
         return dateRegex.test(date) || "A data deve estar no formato DD/MM/AAAA.";
     };
     
-    // async function onSubmit(dados) {
-      
-    //     console.log(dados)
-    // }
-
     async function addUser(dados){
         try {
-            const resposta = await fetch('http://localhost:3000/usuarios',{
+            const resposta = await fetch('http://localhost:3000/users',{
                 method:'POST',
                 body: JSON.stringify(dados)
               
@@ -69,8 +64,6 @@ function CadastroUsuario(){
         }
         
     }
-
-
     return(
         <>
        

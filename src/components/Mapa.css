@@ -1,0 +1,36 @@
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+}
+
+.containerTableandMap {
+    overflow-x: auto; 
+}
+
+.mini-map {
+    width: 200px; 
+    overflow: hidden; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 5px; 
+    text-align: left;
+    border-bottom: 1px solid #156248;
+    word-wrap: break-word; 
+}
+
+th {
+    background-image: linear-gradient(rgb(6, 6, 87), rgb(98, 206, 158));
+    color: aliceblue;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
