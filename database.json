@@ -44,110 +44,89 @@
       "cpf": "65478932102",
       "dataNascimento": "06/12/2005",
       "senha": "321654"
+    },
+    {
+      "id": "5e1c",
+      "nome": "Joaquina",
+      "email": "miau@email.com",
+      "sexo": "feminino",
+      "cpf": "87456698741",
+      "dataNascimento": "09/08/1998",
+      "senha": "7777777",
+      "cep": "88140000",
+      "numero": "150",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "logradouro": "Presidente Castelo Branco",
+      "complemento": "",
+      "bairro": "Centro",
+      "localidade": "",
+      "uf": ""
+    },
+    {
+      "id": "91d9",
+      "nome": "Dilson",
+      "email": "dil@email.com",
+      "sexo": "masculino",
+      "cpf": "54896321547",
+      "dataNascimento": "06/12/1997",
+      "senha": "666333",
+      "cep": "88025500",
+      "numero": "150",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "logradouro": "Delminda Silveira",
+      "complemento": "Rua",
+      "bairro": "Agronômica",
+      "localidade": "Florianópolis",
+      "uf": "SC"
+    },
+    {
+      "id": "33dd",
+      "nome": "Fernanda",
+      "email": "fer@email.com",
+      "sexo": "feminino",
+      "cpf": "45687485125",
+      "dataNascimento": "31/05/1980",
+      "senha": "123456",
+      "cidade": "Santo Amaro",
+      "numero": "200",
+      "estado": "SC",
+      "cep": "88140000",
+      "logradouro": "Rua Presidente Castelo Branco",
+      "complemento": "",
+      "bairro": "Pagara",
+      "localidade": "",
+      "uf": ""
     }
   ],
   "destinys": [
+
+    
     {
-      "id": "a7d8",
-      "nome": "Dunas da Joaquina",
-      "descricao": "Dunas e lagos naturais",
-      "localizacao": "Praia da Joaquina",
-      "latitude": "-27.6101303",
-      "longitude": "-48.4420933",
-      "userId": "d61f"
+      "id": "675c",
+      "nome": "Lagoa da conceição",
+      "descricao": "lagoa, duna e comercio",
+      "rua": "Rua Vereador Osni Ortiga",
+      "bairro": "Lagoa da Conceição",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.61058",
+      "longitude": "-48.46396"
     },
+    
     {
-      "id": "7976",
-      "nome": "Trilha do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão",
-      "latitude": "-27.7958331",
-      "longitude": "-48.5354589",
-      "userId": "d61f"
-    },
-    {
-      "id": "835e",
-      "nome": "Praia do Santinho",
-      "descricao": "Pratica de surf e trilhas",
-      "localizacao": "Santinho",
-      "latitude": "-27.4637465",
-      "longitude": "-48.3809636",
-      "userId": "7825"
-    },
-    {
-      "id": "c403",
-      "nome": "Costa da Lagoa",
-      "descricao": "Acesso barco ou trilha",
-      "localizacao": "Lagoa da Conceição",
-      "latitude": "-27.6010288",
-      "longitude": "-48.4731801"
-    },
-    {
-      "id": "55b6",
-      "nome": "Costa da Lagoa",
-      "descricao": "Acesso barco ou trilha",
-      "localizacao": "Lagoa da Conceição",
-      "latitude": "-27.6010288",
-      "longitude": "-48.4731801"
-    },
-    {
-      "id": "3506",
-      "nome": "Ilha de Anhatomirim",
-      "descricao": "Edificação e mergulho com golfinhos",
-      "localizacao": "Governador Celso Ramos",
-      "latitude": "-19.8336348",
-      "longitude": "-44.1482772"
-    },
-    {
-      "id": "1703",
-      "nome": "Ilha de Anhatomirim",
-      "descricao": "Edificação e mergulho com golfinhos",
-      "localizacao": "Governador Celso Ramos",
-      "latitude": "-19.8336348",
-      "longitude": "-44.1482772"
-    },
-    {
-      "id": "6fb7",
-      "nome": "Ilha de Anhatomirim",
-      "descricao": "Edificação e mergulho com golfinhos",
-      "localizacao": "Governador Celso Ramos",
-      "latitude": "-19.8336348",
-      "longitude": "-44.1482772"
-    },
-    {
-      "id": "94c3",
-      "nome": "Parque Unipraia",
-      "descricao": "Brinquedos radicais",
-      "localizacao": "Balneário Camboriu",
-      "latitude": "-26.9985781",
-      "longitude": "-48.5899309"
-    },
-    {
-      "id": "9d0e",
-      "nome": "Dunas da Joaquina",
-      "descricao": "Pratica de surf e trilhas",
-      "localizacao": "Praia da Joaquina",
-      "latitude": "-27.6343625",
-      "longitude": "-48.45429512946963",
-      "userId": "d61f"
-    },
-    {
-      "id": "ff54",
-      "nome": "Dunas da Joaquina",
-      "descricao": "Pratica de surf e trilhas",
-      "localizacao": "Praia da Joaquina",
-      "latitude": "-27.6343625",
-      "longitude": "-48.45429512946963",
-      "userId": "d61f"
-    },
-    {
-      "id": "7669",
-      "nome": "Praia dos Ingleses",
-      "descricao": "Pratica de surf e trilhas",
-      "localizacao": "Ingleses",
-      "latitude": "-27.6343625",
-      "longitude": "-48.45429512946963",
-      "userId": "d61f"
+      "id": "6f8d",
+      "nome": "Praia do Campeche",
+      "descricao": "praia sem estrutura de comercio",
+      "rua": "Rua Jerônimo Venâncio das Chagas",
+      "bairro": "Campeche",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.66561",
+      "longitude": "-48.47666"
     }
+
+    
   ]
 }
