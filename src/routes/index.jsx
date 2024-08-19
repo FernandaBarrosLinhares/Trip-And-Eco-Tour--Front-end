@@ -25,11 +25,12 @@ function RoutesApp(){
 
              {/* Rotas privadas */}
 
-             {/* <Route element={<TemplatePrivateRouter/>}>
-             <Route path="/dashboard" element={<Dashboard />} />
+              {/* <Route element={<TemplatePrivateRouter/>}> */}
+             {/* <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/dashboard/cadastrodestino" element={<CadastroDestino />} /> 
                     <Route path="/dashboard/listagemdestino" element={<ListagemDestino />} /> 
-            </Route> */}
+                    <Route path="/cadastrodestino/:id" element={<CadastroDestino />} /> */}
+            {/* </Route>  */}
             
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cadastrodestino" element={<CadastroDestino />} />

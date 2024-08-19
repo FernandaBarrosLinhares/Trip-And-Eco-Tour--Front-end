@@ -47,7 +47,6 @@ function ListagemDestinos() {
                             <tr key={index}>
                                 <th>{destino.id}</th>
                                 <td>{destino.nome}</td>
-                                {/* <td>{destino.localizacao}</td> */}
                                 <td>{destino.latitude}</td>
                                 <td>{destino.longitude}</td>
                                 <td>
