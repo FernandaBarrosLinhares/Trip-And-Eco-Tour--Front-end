@@ -1,6 +1,6 @@
-    import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-import MapComponent from '../../components/Mapa'; // Atualizado o caminho do import
+import MapComponent from '../../components/mapa/Mapa'; 
 import userIcon from '../../assets/icons8-usuário-64.png';
 import marcadorIcon from '../../assets/icons8-marcador-24.png';
 import MenuComponent from './../../components/menu/Menu';
@@ -68,11 +68,7 @@ function DashBoard() {
                         {locais.map((local, index) => (
                         <div key={index} className='card'>
                             <div className='card-info'>
-                {/* <div className='info-labels'> */}
-                    {/* <p><strong>Local:</strong></p>
-                    <p><strong>Latitude:</strong></p>
-                    <p><strong>Longitude:</strong></p> */}
-                {/* </div> */}
+             
                         <div className='info-values'>
                             <p>{local.nome}</p>
                             <p>{local.latitude}</p>

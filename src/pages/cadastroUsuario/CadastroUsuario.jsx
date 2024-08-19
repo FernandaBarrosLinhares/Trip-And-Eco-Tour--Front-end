@@ -1,128 +1,139 @@
-import { useForm } from 'react-hook-form'
-import EnderecoComponent from '../../components/endereco/Endereco'
 
-import  './CadastroUsuario.css'
+import { useState } from 'react';
+import './CadastroUsuario.css';
 
+function CadastroUsuario() {
+    const [cep, setCep] = useState('');
+    const [endereco, setEndereco] = useState({
+        logradouro: '',
+        complemento: '',
+        bairro: '',
+        localidade: '',
+        uf: ''
+    });
+    const [dadosUsuario, setDadosUsuario] = useState({
+        nome: '',
+        email: '',
+        sexo: '',
+        cpf: '',
+        dataNascimento: '',
+        senha: ''
+    });
 
-function CadastroUsuario(){
-    const {register,handleSubmit,formState}= useForm()
-    const { errors, isSubmitting } = formState
-
-    const validateCPF = (cpf) => {
-        const cpfRegex = /^\d{11}$/;
-        if (!cpfRegex.test(cpf)) {
-            return "O CPF deve ter 11 dígitos.";
-        }
-      
-        return true;
-    };
-    const validateEmail = async (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return "Formato de email inválido.";
-        }
-        
-        const emailExists = await checkEmailExists(email);
-        if (emailExists) {
-            return "Este email já está em uso.";
-        }
     
-        return true;
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        if (name in endereco) {
+            setEndereco(prevEndereco => ({
+                ...prevEndereco,
+                [name]: value
+            }));
+        } else {
+            setDadosUsuario(prevDados => ({
+                ...prevDados,
+                [name]: value
+            }));
+        }
     };
-    
-    const checkEmailExists = async (email) => {
+
+    const handleChangeCep = async (e) => {
+        const newCep = e.target.value;
+        setCep(newCep);
+
+        if (newCep.length === 8) {
+            try {
+                const response = await fetch(`https://cep.awesomeapi.com.br/json/${newCep}`);
+                const data = await response.json();
+
+                if (data.status === 400) {
+                    alert("CEP inválido. Por favor, verifique o CEP e tente novamente.");
+                    return;
+                }
+
+                setEndereco({
+                    logradouro: data.address_name || '',
+                    complemento: data.address_type || '',
+                    bairro: data.district || '',
+                    localidade: data.city || '',
+                    uf: data.state || ''
+                });
+            } catch (error) {
+                console.error("Erro ao buscar o CEP:", error);
+                alert("Erro ao buscar o CEP. Tente novamente mais tarde.");
+            }
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const dadosCompletos = { ...dadosUsuario, cep, ...endereco };
+
         try {
-            const response = await fetch(`http://localhost:3000/usuarios?email=${email}`);
-            const data = await response.json();
-            return data.length > 0;
-        } catch (error) {
-            console.error("Erro ao verificar o email:", error);
-            return false;
-        }
-    };
-    
-   
-    const validateDate = (date) => {
-        const dateRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
-        return dateRegex.test(date) || "A data deve estar no formato DD/MM/AAAA.";
-    };
-    
-    async function addUser(dados){
-        try {
-            const resposta = await fetch('http://localhost:3000/users',{
-                method:'POST',
-                body: JSON.stringify(dados)
-              
-            })
+            const resposta = await fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dadosCompletos)
+            });
 
-            if(resposta.ok === false)
-            alert("houve um erro ao cadastrar usuario ")
-            
+            if (!resposta.ok) {
+                alert("Houve um erro ao cadastrar usuário");
+            } else {
+                alert("Usuário cadastrado com sucesso!");
+            }
         } catch (error) {
-            alert("Houve um erro ao caddastrar usuario")
-            
+            alert("Houve um erro ao cadastrar usuário");
+            console.error("Erro:", error);
         }
-        
-    }
-    return(
-        <>
-       
+    };
+
+    return (
         <main className='picture-container'>
             <div className="form-container">
-                <form onSubmit={handleSubmit(addUser)}>
-                     <h3 className="h3 mb-3 fw-normal">Preencha todos os campos para realizar seu cadastro!</h3>
-                        <div className="form-row">
-                            <div className="form-group nome">        
+                <form onSubmit={handleSubmit}>
+                    <h3 className="h3 mb-3 fw-normal">Preencha todos os campos para realizar seu cadastro!</h3>
+
+                    <div className="form-row">
+                        <div className="form-group nome">
                             <label htmlFor="nome" className="form-label">Nome</label>
                             <input
                                 type="text"
                                 id="nome"
+                                name="nome"
                                 className="form-control"
                                 placeholder="Digite seu nome"
-                                {...register("nome", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse é obrigatório informar nome"
-                                    },
-                                })}
+                                value={dadosUsuario.nome}
+                                onChange={handleInputChange}
                             />
-                            {errors.nome && <span className='text-danger text-sm'>{errors.nome.message}</span>}
                         </div>
                         <div className="mb-3 form-group email">
-                         <label htmlFor="exampleFormControlInput1" className="form-label">Email</label>
-                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Digite seu email"
-                             {...register("email", {
-                             required: {
-                            value: true,
-                            message: "Esse campo é obrigatório"
-                        },
-                        validate: validateEmail
-                    })}
-                />
-                {errors.email && <span className='text-danger text-sm'>{errors.email.message}</span>}
-            </div>
+                            <label htmlFor="email" className="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                className="form-control"
+                                placeholder="Digite seu email"
+                                value={dadosUsuario.email}
+                                onChange={handleInputChange}
+                            />
+                        </div>
                         <div className="form-group">
                             <label htmlFor="sexo" className="form-label">Sexo</label>
                             <select
                                 id="sexo"
+                                name="sexo"
                                 className="form-select"
-                                {...register("sexo", {
-                                    required: {
-                                        value: true,
-                                        message: "Por favor, selecione uma opção."
-                                    },
-                                    validate: (value) => value !== "" || "Por favor, selecione uma opção válida."
-                                })}
+                                value={dadosUsuario.sexo}
+                                onChange={handleInputChange}
                             >
-                                <option selected>Selecione seu sexo</option>
+                                <option value="">Selecione seu sexo</option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                                 <option value="outros">Outros</option>
                             </select>
-                            {errors.sexo && <span className='text-danger text-sm'>{errors.sexo.message}</span>}
                         </div>
                     </div>
 
@@ -132,34 +143,24 @@ function CadastroUsuario(){
                             <input
                                 type="text"
                                 id="cpf"
+                                name="cpf"
                                 className="form-control"
                                 placeholder="000.000.000-00"
-                                {...register("cpf", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse campo é obrigatório"
-                                    },
-                                    validate: validateCPF
-                                })}
+                                value={dadosUsuario.cpf}
+                                onChange={handleInputChange}
                             />
-                            {errors.cpf && <span className='text-danger text-sm'>{errors.cpf.message}</span>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="dataNascimento" className="form-label">Data de Nascimento</label>
                             <input
                                 type="text"
                                 id="dataNascimento"
+                                name="dataNascimento"
                                 className="form-control"
                                 placeholder="00/00/0000"
-                                {...register("dataNascimento", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse campo é obrigatório"
-                                    },
-                                    validate: validateDate
-                                })}
+                                value={dadosUsuario.dataNascimento}
+                                onChange={handleInputChange}
                             />
-                            {errors.dataNascimento && <span className='text-danger text-sm'>{errors.dataNascimento.message}</span>}
                         </div>
                     </div>
 
@@ -169,34 +170,100 @@ function CadastroUsuario(){
                             <input
                                 type="password"
                                 id="senha"
+                                name="senha"
                                 className="form-control"
                                 placeholder="********"
-                                {...register("senha", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse campo é obrigatório"
-                                    },
-                                })}
+                                value={dadosUsuario.senha}
+                                onChange={handleInputChange}
                             />
-                            {errors.senha && <span className='text-danger text-sm'>{errors.senha.message}</span>}
                         </div>
                     </div>
 
-                    <EnderecoComponent />
+                    <div className='form-row'>
+                        <div className="mb-3 form-group cep">
+                            <label htmlFor="cep" className="form-label">CEP</label>
+                            <input
+                                type="text"
+                                id="cep"
+                                name="cep"
+                                className="form-control"
+                                placeholder="Digite seu CEP"
+                                value={cep}
+                                onChange={handleChangeCep}
+                            />
+                        </div>
+                        <div className="mb-3 form-group rua">
+                            <label htmlFor="logradouro" className="form-label">Rua</label>
+                            <input
+                                type="text"
+                                id="logradouro"
+                                name="logradouro"
+                                className="form-control"
+                                placeholder="Rua"
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="mb-3 form-group numero">
+                            <label htmlFor="numero" className="form-label">Número</label>
+                            <input
+                                type="text"
+                                id="numero"
+                                name="numero"
+                                className="form-control"
+                                placeholder="Número"
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="mb-3 form-group bairro">
+                            <label htmlFor="bairro" className="form-label">Bairro</label>
+                            <input
+                                type="text"
+                                id="bairro"
+                                name="bairro"
+                                className="form-control"
+                                placeholder="Bairro"
+                                value={endereco.bairro}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="mb-3 form-group cidade">
+                            <label htmlFor="cidade" className="form-label">Cidade</label>
+                            <input
+                                type="text"
+                                id="cidade"
+                                name="cidade"
+                                className="form-control"
+                                placeholder="Cidade"
+                    
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="mb-3 form-group estado">
+                            <label htmlFor="estado" className="form-label">Estado</label>
+                            <input
+                                type="text"
+                                id="estado"
+                                name="estado"
+                                className="form-control"
+                                placeholder="Estado"
+                                
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                    </div>
 
-                    <button className="btn btn-success" type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? 'Carregando...' : 'Cadastrar'}
+                    <button className="btn btn-success" type="submit">
+                        Cadastrar
                     </button>
                     <button type="button" className="btn btn-secondary">Atualizar</button>
+                    
+                        
                     <button type="button" className="btn btn-danger">Deletar</button>
                 </form>
-
             </div>
-
         </main>
-        
-        </>
-    )
+    );
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;
+
