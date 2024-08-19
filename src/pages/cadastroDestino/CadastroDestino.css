@@ -1,102 +1,30 @@
-/* 
-.picture-container-destino {
-    width: 100%;
-    height: 100%;
-    background-image: url('https://media.istockphoto.com/id/1443409611/pt/foto/man-on-stone-on-the-hill-and-beautiful-mountains-in-haze-at-colorful-sunset-in-autumn.jpg?s=2048x2048&w=is&k=20&c=1C5Y-BEey_zbki6mKBxAdhb9JKSgFPz_y2BIqQitWt4=');
+.container-destino {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title{
-    margin: 10%;
-    text-shadow: 5pcpx 0px;
-    align-items: center;
-    justify-content: center;
-    margin-left: 20%;
-    margin-bottom: 40%;
-    color: aliceblue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
-}
-
-.form-container-destino {
-    background-image: linear-gradient(rgb(225, 199, 104), rgb(98, 206, 158));
-    width: 80%;
-    height: 80%;
-    text-align: start;
-    padding: 10px;
-    margin-top: 8px;
-    color:white;
-    opacity: 0.8;
-    border-radius: 8px;
-}
-
-
-
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.form-group-destino {
-    flex: 1;
-    flex-direction: column;
-    width: 30%;
-    
-}
- .form-control-destino {
-    width: 10%;
-    padding: 8px;
-    box-sizing: border-box;
-} 
-
- .form-label-destino {
-    color: white;
-    opacity: 0.8;
-} 
-
-.btn-success {
-    margin-top: 20px;
-    width: 20%;
-    margin: 5%;
-    margin-left: 10%;
-}
-
-    .btn-secondary{
-        margin-top: 20px;
-        width: 20%;
-        margin: 5%;
-    }
-
-    .btn-danger{
-        margin-top: 20px;
-        width: 20%;
-        margin: 5%;
-    }
- */
- .picture-container-destino {
-    display: flex;
-    width: 100%;
-    height: 100vh; /* Garante que o container ocupe a altura total da tela */
-    background-image: url('https://media.istockphoto.com/id/1443409611/pt/foto/man-on-stone-on-the-hill-and-beautiful-mountains-in-haze-at-colorful-sunset-in-autumn.jpg?s=2048x2048&w=is&k=20&c=1C5Y-BEey_zbki6mKBxAdhb9JKSgFPz_y2BIqQitWt4=');
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
 }
 
 .container-menu {
-    width: 20%; /* Largura fixa para o menu */
-    height: 100%; /* O menu ocupa toda a altura */
-    background-image: linear-gradient(rgb(6, 6, 87), rgb(98, 206, 158)); /* Consistência com o menu */
+    width: 20%; 
+    height: 100%;
+    background-image: linear-gradient(rgb(6, 6, 87), rgb(98, 206, 158));
     padding: 20px;
     box-sizing: border-box;
 }
 
+.picture-container-destino {
+    display: flex;
+    width: 80%;  
+    height: 100vh; 
+    background-image: url('https://media.istockphoto.com/id/1443409611/pt/foto/man-on-stone-on-the-hill-and-beautiful-mountains-in-haze-at-colorful-sunset-in-autumn.jpg?s=2048x2048&w=is&k=20&c=1C5Y-BEey_zbki6mKBxAdhb9JKSgFPz_y2BIqQitWt4=');
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
 .form-container-destino {
-    flex: 1; /* O container de formulário ocupa o restante do espaço */
-    height: 90%; /* Ajusta a altura do formulário */
-    /* background-image: linear-gradient(rgb(225, 199, 104), rgb(98, 206, 158)); */
+    flex: 1; 
+    height: 90%; 
     background-color: transparent;
     padding: 20px;
     color: white;
@@ -104,9 +32,10 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+    justify-content: space-between; 
     box-sizing: border-box;
 }
+
 
 .titlle {
     margin-bottom: 20px;
@@ -117,17 +46,17 @@
 .form-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Reduz o espaço entre os grupos de formulário */
+    gap: 15px; 
     flex: 1;
 }
 
 .form-group-destino {
-    flex: 1 1 45%; /* O campo ocupa até 45% da largura, se possível */
-    min-width: 200px; /* Garantir que os inputs não sejam muito pequenos em telas menores */
+    flex: 1 1 45%; 
+    min-width: 200px; 
 }
 
 .form-control-destino {
-    width: 100%; /* Alinha os inputs para ocupar 100% da largura do form-group */
+    width: 100%; 
     padding: 8px;
     box-sizing: border-box;
 }
@@ -136,6 +65,7 @@
     color: white;
     opacity: 0.8;
 }
+
 
 .btn-container {
     display: flex;

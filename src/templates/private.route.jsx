@@ -11,7 +11,7 @@ export function TemplatePrivateRouter(){
 
     return user ?(
         <div>
-            <Menu/>
+          
             <main>
                 <Outlet/>
             </main>

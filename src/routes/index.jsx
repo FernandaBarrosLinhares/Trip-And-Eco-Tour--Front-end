@@ -4,6 +4,7 @@ import CadastroDestino from "../pages/cadastroDestino/CadastroDestino"
 import ListagemDestino from "../pages/listagemDestino/ListagemDestino"
 import Dashboard from'../pages/dashboard/Dashboard'
 
+
 // import { TemplatePrivateRouter } from "../templates/private.route"
 
 
@@ -32,9 +33,11 @@ function RoutesApp(){
             
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cadastrodestino" element={<CadastroDestino />} />
+            <Route path="/cadastrodestino/:id" element={<CadastroDestino />} />
             <Route path="/listagemdestino" element={<ListagemDestino />} />
 
-
+         
+            
        
 
          

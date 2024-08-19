@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import MenuComponent from '../../components/menu/Menu';
 import './ListagemDestino.css';
+import { Link } from 'react-router-dom';
 
 function ListagemDestinos() {
     const [destinos, setDestinos] = useState([]);
@@ -33,21 +34,25 @@ function ListagemDestinos() {
                 <table className="table-destinos">
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nome</th>
-                            <th>Descrição</th>
-                            <th>Localização</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
+                             <th></th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         {destinos.map((destino, index) => (
                             <tr key={index}>
+                                <th>{destino.id}</th>
                                 <td>{destino.nome}</td>
-                                <td>{destino.descricao}</td>
-                                <td>{destino.localizacao}</td>
+                                {/* <td>{destino.localizacao}</td> */}
                                 <td>{destino.latitude}</td>
                                 <td>{destino.longitude}</td>
+                                <td>
+                                    <Link to={`/cadastrodestino/${destino.id}`}><button type="button" className="btn btn-outline-success">Editar</button></Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
