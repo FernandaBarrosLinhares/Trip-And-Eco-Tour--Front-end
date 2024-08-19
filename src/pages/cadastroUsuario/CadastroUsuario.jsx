@@ -6,7 +6,6 @@ function CadastroUsuario() {
     const [cep, setCep] = useState('');
     const [endereco, setEndereco] = useState({
         logradouro: '',
-        complemento: '',
         bairro: '',
         localidade: '',
         uf: ''
@@ -52,11 +51,11 @@ function CadastroUsuario() {
                 }
 
                 setEndereco({
-                    logradouro: data.address_name || '',
-                    complemento: data.address_type || '',
-                    bairro: data.district || '',
-                    localidade: data.city || '',
-                    uf: data.state || ''
+                    logradouro: data.logradouro || '',
+                    complemento: data.complemento || '',
+                    bairro: data.bairro || '',
+                    localidade: data.cidade || '',
+                    uf: data.estado || ''
                 });
             } catch (error) {
                 console.error("Erro ao buscar o CEP:", error);
@@ -200,6 +199,7 @@ function CadastroUsuario() {
                                 name="logradouro"
                                 className="form-control"
                                 placeholder="Rua"
+                                value={endereco.logradouro}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -234,7 +234,7 @@ function CadastroUsuario() {
                                 name="cidade"
                                 className="form-control"
                                 placeholder="Cidade"
-                    
+                                value={endereco.cidade}
                                 onChange={handleInputChange}
                             />
                         </div>
@@ -246,7 +246,7 @@ function CadastroUsuario() {
                                 name="estado"
                                 className="form-control"
                                 placeholder="Estado"
-                                
+                                value={endereco.estado}
                                 onChange={handleInputChange}
                             />
                         </div>

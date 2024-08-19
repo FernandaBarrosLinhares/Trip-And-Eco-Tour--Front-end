@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../../context/Auth';
-import MenuComponent from '../../components/menu/Menu'; // Usando apenas o MenuComponent
+import MenuComponent from '../../components/menu/Menu'; 
+import { useParams } from 'react-router-dom';
 import './CadastroDestino.css';
 
 function CadastroDestino() {
-    const { register, handleSubmit, setValue, formState } = useForm();
+    const { register, handleSubmit,  formState ,setValue} = useForm();
     const { errors, isSubmitting } = formState;
     const { user } = useAuth();
+    const params = useParams();
+    console.log(params)
 
     const [entrada, setEntrada] = useState('');
     const [endereco, setEndereco] = useState({
@@ -62,26 +65,64 @@ function CadastroDestino() {
 
     async function addDestinys(dados) {
         try {
-            const dadosCompletos = {
-                ...dados,
-                userId: user?.id,
-            };
-
-            const resposta = await fetch('http://localhost:3000/destinys', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dadosCompletos),
-            });
-
-            if (!resposta.ok) {
-                alert('Houve um erro ao cadastrar destino');
+            
+            if(params.id){
+               const resposta = await fetch(`http://localhost:3000/destinys/${params.id}`,{
+                    method: 'PUT',
+                    body: JSON.stringify(dados),
+                })
+                if (!resposta.ok) {
+                    alert('Houve um erro ao atualizar destino');
+                } else{
+                    alert("Destino atualizado")
+                }
+                
+            }else{
+                
+                const dadosCompletos = {
+                    ...dados,
+                    userId: user?.id,
+                };
+                
+                
+                const resposta = await fetch('http://localhost:3000/destinys', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dadosCompletos),
+                });
+    
+                if (!resposta.ok) {
+                    alert('Houve um erro ao cadastrar destino');
+                } else{
+                    alert("Destino cadastrado")
+                }
             }
+
+          
         } catch (error) {
             alert('Houve um erro ao cadastrar destino');
         }
     }
+
+       useEffect(() => {
+         if(params.id){
+             fetch(`http://localhost:3000/destinys/${params.id}`)
+             .then(async(response) =>{
+                const dadosDestino = await response.json()
+                setValue ("nome", dadosDestino.nome)
+                setValue ("descrição", dadosDestino.descricao)
+                setValue ("cep", dadosDestino.cep)
+                setValue ("rua", dadosDestino.rua)
+                setValue ("bairro", dadosDestino.bairro)
+                setValue ("cidade", dadosDestino.cidade)
+                setValue ("estado", dadosDestino.estado)
+                setValue ("latitude", dadosDestino.latitude)
+                setValue ("longitude", dadosDestino.longitude)
+         })
+        }
+       },[])
 
     return (
         <div className="container-destino">
@@ -225,7 +266,7 @@ function CadastroDestino() {
                             <button className="btn btn-success" type="submit" disabled={isSubmitting}>
                                 {isSubmitting ? 'Carregando...' : 'Cadastrar'}
                             </button>
-                            <button type="button" className="btn btn-secondary">Atualizar</button>
+                            
                             <button type="button" className="btn btn-danger">Deletar</button>
                         </div>
                     </form>
