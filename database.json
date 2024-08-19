@@ -1,51 +1,6 @@
 {
   "users": [
     {
-      "id": "d61f",
-      "nome": "Fernanda Linhares",
-      "email": "devfernandalinhares@gmail.com",
-      "sexo": "feminino",
-      "cpf": "98765826712",
-      "dataNascimento": "31/05/1980",
-      "senha": "123456"
-    },
-    {
-      "id": "4992",
-      "nome": "Marcelo Kaique Luís Campos",
-      "email": "marcelo-campos@gmail.com",
-      "sexo": "masculino",
-      "cpf": "98765826712",
-      "dataNascimento": "15/01/1998",
-      "senha": "marcelo84"
-    },
-    {
-      "id": "0245",
-      "nome": "Robison Stulp",
-      "email": "bob@hotmail.com",
-      "sexo": "masculino",
-      "cpf": "98736557898",
-      "dataNascimento": "08/02/1975",
-      "senha": "698745"
-    },
-    {
-      "id": "7825",
-      "nome": "Guilherme Barros",
-      "email": "guisales@tribetour.com",
-      "sexo": "masculino",
-      "cpf": "36578941202",
-      "dataNascimento": "17/05/2017",
-      "senha": "123"
-    },
-    {
-      "id": "4529",
-      "nome": "Julia Andrade Souza",
-      "email": "juandrade@softplan.com.br",
-      "sexo": "feminino",
-      "cpf": "65478932102",
-      "dataNascimento": "06/12/2005",
-      "senha": "321654"
-    },
-    {
       "id": "5e1c",
       "nome": "Joaquina",
       "email": "miau@email.com",
@@ -98,11 +53,24 @@
       "bairro": "Pagara",
       "localidade": "",
       "uf": ""
+    },
+    {
+      "id": "d9d0",
+      "nome": "Guilherme",
+      "email": "gri@email.com",
+      "sexo": "masculino",
+      "cpf": "02314569874",
+      "dataNascimento": "12/05/2017",
+      "senha": "12345687",
+      "cep": "88062050",
+      "logradouro": "Senador Ivo DAquino",
+      "complemento": "Rua",
+      "bairro": "Lagoa da Conceição",
+      "localidade": "Florianópolis",
+      "uf": "SC"
     }
   ],
   "destinys": [
-
-    
     {
       "id": "675c",
       "nome": "Lagoa da conceição",
@@ -114,7 +82,6 @@
       "latitude": "-27.61058",
       "longitude": "-48.46396"
     },
-    
     {
       "id": "6f8d",
       "nome": "Praia do Campeche",
@@ -125,8 +92,63 @@
       "estado": "SC",
       "latitude": "-27.66561",
       "longitude": "-48.47666"
+    },
+    {
+      "id": "a791",
+      "nome": "Santinho",
+      "descricao": "praia, surf e inscrição rupestre",
+      "rua": "Servidão Lucas Pedro Claudino",
+      "bairro": "Ingleses do Rio Vermelho",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.46104",
+      "longitude": "-48.37936"
+    },
+    {
+      "id": "24e3",
+      "nome": "Praia da Armação",
+      "descricao": "estrutura, trilha saídas passeios barco",
+      "rua": "Rua Luiz Gonzaga dos Santos",
+      "bairro": "Armação do Pântano do Sul",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.75169",
+      "longitude": "-48.50303"
+    },
+    {
+      "id": "161f",
+      "nome": "Praia da Daniela",
+      "descricao": "aguas calmas pouco movimentada",
+      "rua": "Rua dos Cáctus",
+      "bairro": "Daniela",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.44498",
+      "longitude": "-48.52312"
+    },
+    {
+      "id": "5054",
+      "nome": "Praia de Jurere",
+      "descricao": "praia e badalação",
+      "rua": "Rua César Nascimento",
+      "bairro": "Jurerê",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.4396",
+      "longitude": "-48.48887",
+      "userId": "33dd"
+    },
+    {
+      "id": "f511",
+      "nome": "Saquinho",
+      "descricao": "praia e trilha",
+      "rua": "Rua Inério Joaquim da Silva",
+      "bairro": "Pântano do Sul",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.79325",
+      "longitude": "-48.53378",
+      "userId": "33dd"
     }
-
-    
   ]
 }

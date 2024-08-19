@@ -36,7 +36,8 @@ function ListagemDestinos() {
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
-                            <th>Localização</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
                              <th></th>
                             
                         </tr>
@@ -46,7 +47,9 @@ function ListagemDestinos() {
                             <tr key={index}>
                                 <th>{destino.id}</th>
                                 <td>{destino.nome}</td>
-                                <td>{destino.localizacao}</td>
+                                {/* <td>{destino.localizacao}</td> */}
+                                <td>{destino.latitude}</td>
+                                <td>{destino.longitude}</td>
                                 <td>
                                     <Link to={`/cadastrodestino/${destino.id}`}><button type="button" className="btn btn-outline-success">Editar</button></Link>
                                 </td>
