@@ -1,0 +1,108 @@
+.container-dashboard {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.container-menu {
+    width: 20%;
+    height: 100%;
+}
+
+.container-main {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.card-user, .card-destiny {
+    background-color: rgb(6, 6, 87);
+    width: 60%;
+    height: 100px;
+    border-radius: 8px;
+    color: rgb(83, 170, 247);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    box-shadow: black;
+}
+
+.card-user img, .card-destiny img {
+    width: 40px;
+    height: 40px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-height: 80vh; 
+    overflow-y: auto;
+    padding-right: 10px; 
+}
+
+
+.info-labels p,
+.info-values p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.card-map {
+    width: 200px;
+    height: 150px;
+}
+
+.card-map > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 20px; 
+    max-height: 200px; 
+}
+
+.card-info {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.card-map {
+    flex-basis: 200px; 
+    height: 150px;
+    overflow: hidden;
+}
+
+.card-map > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

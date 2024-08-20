@@ -2,17 +2,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 20%;
+    width: 100%;
     color:white;
     padding: 20px;
     height: 100vh;
     align-items: rigth;
-    /* opacity: 0.5; */
-    background-image: url('https://media.istockphoto.com/id/1511303109/pt/foto/aerial-view-of-road-with-green-trees.jpg?s=2048x2048&w=is&k=20&c=Oigxz8E8BxWBbr_iBzxyv409hI-Bn-UgQ0TdzjJ_-XI=');
-    /* background-image: linear-gradient(rgb(6, 6, 87), rgb(98, 206, 158)); */
+     background-color: white; 
+    
   }
 
   .sidebar h1{
     color:rgb(106, 113, 77) ;
     
   }
+
+  

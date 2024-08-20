@@ -11,12 +11,13 @@ const { errors, isSubmitting } = formState
 const { signIn } = useAuth();
 const navigate = useNavigate();
 
+
     async function onSubmit(dados) {
-        console.log(dados)
-    
+        
         signIn(dados);
        
         navigate('/dashboard');
+       
     }   
 
   

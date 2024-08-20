@@ -1,123 +1,232 @@
 {
   "users": [
     {
-      "id": "d61f",
-      "nome": "Fernanda Linhares",
-      "email": "devfernandalinhares@gmail.com",
+      "id": "5e1c",
+      "nome": "Joaquina",
+      "email": "miau@email.com",
       "sexo": "feminino",
-      "cpf": "98765826712",
+      "cpf": "87456698741",
+      "dataNascimento": "09/08/1998",
+      "senha": "7777777",
+      "cep": "88140000",
+      "numero": "150",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "logradouro": "Presidente Castelo Branco",
+      "complemento": "",
+      "bairro": "Centro",
+      "localidade": "",
+      "uf": ""
+    },
+    {
+      "id": "91d9",
+      "nome": "Dilson",
+      "email": "dil@email.com",
+      "sexo": "masculino",
+      "cpf": "54896321547",
+      "dataNascimento": "06/12/1997",
+      "senha": "666333",
+      "cep": "88025500",
+      "numero": "150",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "logradouro": "Delminda Silveira",
+      "complemento": "Rua",
+      "bairro": "Agronômica",
+      "localidade": "Florianópolis",
+      "uf": "SC"
+    },
+    {
+      "id": "33dd",
+      "nome": "Fernanda",
+      "email": "fer@email.com",
+      "sexo": "feminino",
+      "cpf": "45687485125",
       "dataNascimento": "31/05/1980",
-      "senha": "******"
+      "senha": "123456",
+      "cidade": "Santo Amaro",
+      "numero": "200",
+      "estado": "SC",
+      "cep": "88140000",
+      "logradouro": "Rua Presidente Castelo Branco",
+      "complemento": "",
+      "bairro": "Pagara",
+      "localidade": "",
+      "uf": ""
     },
     {
-      "id": "4992",
-      "nome": "Marcelo Kaique Luís Campos",
-      "email": "marcelo-campos@gmail.com",
+      "id": "d9d0",
+      "nome": "Guilherme",
+      "email": "gri@email.com",
       "sexo": "masculino",
-      "cpf": "98765826712",
-      "dataNascimento": "15/01/1998",
-      "senha": "marcelo84"
+      "cpf": "02314569874",
+      "dataNascimento": "12/05/2017",
+      "senha": "12345687",
+      "cep": "88062050",
+      "logradouro": "Senador Ivo DAquino",
+      "complemento": "Rua",
+      "bairro": "Lagoa da Conceição",
+      "localidade": "Florianópolis",
+      "uf": "SC"
     },
     {
-      "id": "0245",
-      "nome": "Robison Stulp",
-      "email": "bob@hotmail.com",
-      "sexo": "masculino",
-      "cpf": "98736557898",
-      "dataNascimento": "08/02/1975",
-      "senha": "698745"
-    },
-    {
-      "id": "7825",
-      "nome": "Guilherme Barros",
-      "email": "guisales@tribetour.com",
-      "sexo": "masculino",
-      "cpf": "36578941202",
-      "dataNascimento": "17/05/2017",
-      "senha": "11111111"
-    },
-    {
-      "id": "4529",
-      "nome": "Julia Andrade Souza",
-      "email": "juandrade@softplan.com.br",
+      "id": "231e",
+      "nome": "Joaquina Shequepah",
+      "email": "joaca@email.com",
       "sexo": "feminino",
-      "cpf": "65478932102",
-      "dataNascimento": "06/12/2005",
-      "senha": "321654"
+      "cpf": "32145678998",
+      "dataNascimento": "18/09/2011",
+      "senha": "654789",
+      "numero": "152",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "cep": "88060235",
+      "logradouro": "Rua 25 de Abril",
+      "complemento": "Servidão",
+      "bairro": "São João do Rio Vermelho",
+      "localidade": "Florianópolis",
+      "uf": "SC"
+    },
+    {
+      "id": "d42f",
+      "nome": "",
+      "email": "",
+      "sexo": "",
+      "cpf": "",
+      "dataNascimento": "",
+      "senha": "",
+      "cep": "88060235",
+      "logradouro": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": ""
+    },
+    {
+      "id": "84f8",
+      "nome": "",
+      "email": "",
+      "sexo": "",
+      "cpf": "",
+      "dataNascimento": "",
+      "senha": "",
+      "cep": "88140000",
+      "logradouro": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": ""
+    },
+    {
+      "id": "b1fd",
+      "nome": "",
+      "email": "",
+      "sexo": "",
+      "cpf": "",
+      "dataNascimento": "",
+      "senha": "",
+      "cep": "88140000",
+      "logradouro": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": ""
+    },
+    {
+      "id": "07d0",
+      "nome": "",
+      "email": "",
+      "sexo": "",
+      "cpf": "",
+      "dataNascimento": "",
+      "senha": "",
+      "cep": "44444444",
+      "logradouro": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": ""
     }
   ],
-  "destiny": [
+  "destinys": [
     {
-      "id": "87b8",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "675c",
+      "nome": "Lagoa da conceição",
+      "descricao": "lagoa, duna e comercio",
+      "rua": "Rua Vereador Osni Ortiga",
+      "bairro": "Lagoa da Conceição",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.61058",
+      "longitude": "-48.46396"
     },
     {
-      "id": "65bf",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "6f8d",
+      "nome": "Praia do Campeche",
+      "descricao": "praia sem estrutura de comercio",
+      "rua": "Rua Jerônimo Venâncio das Chagas",
+      "bairro": "Campeche",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.66561",
+      "longitude": "-48.47666"
     },
     {
-      "id": "fd27",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "a791",
+      "nome": "Santinho",
+      "descricao": "praia, surf e inscrição rupestre",
+      "rua": "Servidão Lucas Pedro Claudino",
+      "bairro": "Ingleses do Rio Vermelho",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.46104",
+      "longitude": "-48.37936"
     },
     {
-      "id": "dda3",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "24e3",
+      "nome": "Praia da Armação",
+      "descricao": "estrutura, trilha saídas passeios barco",
+      "rua": "Rua Luiz Gonzaga dos Santos",
+      "bairro": "Armação do Pântano do Sul",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.75169",
+      "longitude": "-48.50303"
     },
     {
-      "id": "7797",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "161f",
+      "nome": "Praia da Daniela",
+      "descricao": "aguas calmas pouco movimentada",
+      "rua": "Rua dos Cáctus",
+      "bairro": "Daniela",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.44498",
+      "longitude": "-48.52312"
     },
     {
-      "id": "76b4",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "id": "5054",
+      "nome": "Praia de Jurere",
+      "descricao": "praia e badalação",
+      "rua": "Rua César Nascimento",
+      "bairro": "Jurerê",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.4396",
+      "longitude": "-48.48887",
+      "userId": "33dd"
     },
     {
-      "id": "7512",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "2447",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "df19",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "0dda",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "feee",
-      "nome": "Praia do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
-    },
-    {
-      "id": "3b67",
-      "nome": "Trilha do Saquinho",
-      "descricao": "Trilha leve, piso concreto, em torno de 45 minutos de caminhada.",
-      "localizacao": "Praia da Solidão"
+      "nome": "Solidão",
+      "descricao": "Local calma, praia limpa e tranquila",
+      "rua": "Rua Inério Joaquim da Silva",
+      "bairro": "Pântano do Sul",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.79325",
+      "longitude": "-48.53378",
+      "descrição": "praia e trilha",
+      "id": "f511"
     }
   ]
 }

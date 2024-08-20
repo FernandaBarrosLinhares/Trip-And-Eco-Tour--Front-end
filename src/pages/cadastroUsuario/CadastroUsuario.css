@@ -1,13 +1,13 @@
 .picture-container {
     width: 100%;
-    height: 100vh; /* Ajuste a altura para ocupar a tela inteira */
+    height: 100vh; 
     background-image: url('https://media.istockphoto.com/id/1296886636/pt/foto/aerial-drone-view-of-the-beautiful-small-island-and-palm-trees-of-atlantic-ocean-cayo.jpg?s=2048x2048&w=is&k=20&c=dTDbtNmfRRQ0Or0NuMHLzXTYHGd1E_P1vBCClFys7Xo=');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Evitar o scroll */
+    overflow: hidden; 
 }
 
 h3 {
@@ -15,19 +15,19 @@ h3 {
     color: aliceblue;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: larger;
-    text-align: center; /* Centralizar o texto */
+    text-align: center; 
 }
 
 .form-container {
     background-image: linear-gradient(rgb(6, 6, 87), rgb(98, 206, 158));
     width: 80%;
-    max-width: 1200px; /* Limitar a largura máxima */
+    max-width: 1200px; 
     height: auto;
     padding: 20px;
     color: white;
     opacity: 0.8;
     border-radius: 8px;
-    box-sizing: border-box; /* Garantir que padding e border estejam dentro da largura */
+    box-sizing: border-box; 
 }
 
 .form-row {
@@ -54,7 +54,7 @@ h3 {
 
 .btn-success, .btn-secondary, .btn-danger {
     margin-top: 20px;
-    width: calc(33.33% - 10px); /* Ajuste para 3 botões por linha com espaço entre eles */
+    width: calc(33.33% - 10px); 
     margin: 5px;
 }
 
@@ -74,7 +74,7 @@ h3 {
     }
 
     .btn-success, .btn-secondary, .btn-danger {
-        width: calc(50% - 10px); /* Ajuste para 2 botões por linha */
+        width: calc(50% - 10px); 
     }
 }
 
@@ -94,6 +94,6 @@ h3 {
     }
 
     .btn-success, .btn-secondary, .btn-danger {
-        width: 100%; /* Ajuste para 1 botão por linha */
+        width: 100%; 
     }
 }

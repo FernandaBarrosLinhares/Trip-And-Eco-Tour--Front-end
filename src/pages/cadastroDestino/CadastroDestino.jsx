@@ -1,130 +1,279 @@
-import {useForm} from 'react-hook-form'
-// import MenuComponent from "../../components/menu/MenuComponet"
-import EnderecoComponent from '../../components/endereco/Endereco'
-import './CadastroDestino.css'
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useAuth } from '../../context/Auth';
+import MenuComponent from '../../components/menu/Menu'; 
+import { useParams } from 'react-router-dom';
+import './CadastroDestino.css';
 
+function CadastroDestino() {
+    const { register, handleSubmit,  formState ,setValue} = useForm();
+    const { errors, isSubmitting } = formState;
+    const { user } = useAuth();
+    const params = useParams();
+    console.log(params)
 
-function CadastroDestino(){
-    const {register,handleSubmit,formState}= useForm()
-    const { errors, isSubmitting } = formState
+    const [entrada, setEntrada] = useState('');
+    const [endereco, setEndereco] = useState({
+        rua: '',
+        complemento: '',
+        bairro: '',
+        cidade: '',
+        estado: '',
+        latitude: '',
+        longitude: ''
+    });
 
-    async function addDestinys(dados){
-        try {
-            const resposta = await fetch('http://localhost:3000/destiny',{
-                method:'POST',
-                body: JSON.stringify(dados)
-              
-            })
+    const lidarComMudancaEntrada = (e) => {
+        setEntrada(e.target.value);
+    };
 
-            if(resposta.ok === false)
-            alert("houve um erro ao cadastrar destino ")
-            
-        } catch (error) {
-            alert("Houve um erro ao cadastrar usuario")
-            
+    const buscarInformacoes = async () => {
+        if (!entrada) {
+            alert('Por favor, insira um CEP válido');
+            return;
         }
-        
+
+        try {
+            const resposta = await fetch(`https://cep.awesomeapi.com.br/json/${entrada}`);
+            const dados = await resposta.json();
+
+            if (dados && !dados.error) {
+                setEndereco({
+                    rua: dados.address || '',
+                    complemento: dados.address_type || '',
+                    bairro: dados.district || '',
+                    cidade: dados.city || '',
+                    estado: dados.state || '',
+                    latitude: dados.lat,
+                    longitude: dados.lng,
+                });
+
+                setValue('rua', dados.address || '');
+                setValue('bairro', dados.district || '');
+                setValue('cidade', dados.city || '');
+                setValue('estado', dados.state || '');
+                setValue('latitude', dados.lat);
+                setValue('longitude', dados.lng);
+            } else {
+                alert('CEP não encontrado');
+            }
+        } catch (erro) {
+            console.error("Erro ao buscar o CEP:", erro);
+            alert('Erro ao buscar o CEP. Tente novamente mais tarde.');
+        }
+    };
+
+    async function addDestinys(dados) {
+        try {
+            
+            if(params.id){
+               const resposta = await fetch(`http://localhost:3000/destinys/${params.id}`,{
+                    method: 'PUT',
+                    body: JSON.stringify(dados),
+                })
+                if (!resposta.ok) {
+                    alert('Houve um erro ao atualizar destino');
+                } else{
+                    alert("Destino atualizado")
+                }
+                
+            }else{
+                
+                const dadosCompletos = {
+                    ...dados,
+                    userId: user?.id,
+                };
+                
+                
+                const resposta = await fetch('http://localhost:3000/destinys', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dadosCompletos),
+                });
+    
+                if (!resposta.ok) {
+                    alert('Houve um erro ao cadastrar destino');
+                } else{
+                    alert("Destino cadastrado")
+                }
+            }
+
+          
+        } catch (error) {
+            alert('Houve um erro ao cadastrar destino');
+        }
     }
 
+       useEffect(() => {
+         if(params.id){
+             fetch(`http://localhost:3000/destinys/${params.id}`)
+             .then(async(response) =>{
+                const dadosDestino = await response.json()
+                setValue ("nome", dadosDestino.nome)
+                setValue ("descrição", dadosDestino.descricao)
+                setValue ("cep", dadosDestino.cep)
+                setValue ("rua", dadosDestino.rua)
+                setValue ("bairro", dadosDestino.bairro)
+                setValue ("cidade", dadosDestino.cidade)
+                setValue ("estado", dadosDestino.estado)
+                setValue ("latitude", dadosDestino.latitude)
+                setValue ("longitude", dadosDestino.longitude)
+         })
+        }
+       },[])
 
-    return(
-        <>
-        
-            <div >
-                {/* <MenuComponent/> */}
+    return (
+        <div className="container-destino">
+            <div className="container-menu">
+                <MenuComponent />
             </div>
-        
-            <main className='picture-container-destino'>
-            <div className="form-container-destino">
-                <form onSubmit={handleSubmit(addDestinys)}>
-                     <h3 className="titlle mb-3 fw-normal">Preencha todos os campos para adicionar destino!</h3>
+            <main className="picture-container-destino">
+                <div className="form-container-destino">
+                    <form onSubmit={handleSubmit(addDestinys)}>
+                        <h3 className="titlle mb-3 fw-normal">Preencha todos os campos para adicionar destino!</h3>
+
                         <div className="form-row">
-                            <div className="form-group-destino nome">        
-                            <label htmlFor="nome" className="form-label">Nome do destino</label>
-                            <input
-                                type="text"
-                                id="nome"
-                                className="form-control"
-                                placeholder="Digite o nome do seu destino"
-                                {...register("nome", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse é obrigatório informar nome"
-                                    },
-                                })}
-                            />
-                            {errors.nome && <span className='text-danger text-sm'>{errors.nome.message}</span>}
-                        </div>
-                        <div className="mb-3 form-group-destino descricao">
-                         <label htmlFor="exampleFormControlInput1" className="form-label-destino">Descrição </label>
-                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Descreva o local"
-                             {...register("descricao", {
-                             required: {
-                            value: true,
-                            message: "Esse campo é obrigatório"
-                        },
-                    
-                    })}
-                />
-                {errors.descricao && <span className='text-danger text-sm'>{errors.descricao.message}</span>}
-            </div>
-        
-                    </div>
+                            <div className="form-group nome">
+                                <label htmlFor="nome" className="form-label">Nome do destino</label>
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    className="form-control"
+                                    placeholder="Digite o nome do seu destino"
+                                    {...register("nome", {
+                                        required: {
+                                            value: true,
+                                            message: "Esse campo é obrigatório",
+                                        },
+                                    })}
+                                />
+                                {errors.nome && <span className="text-danger text-sm">{errors.nome.message}</span>}
+                            </div>
 
-                    <div className="form-row">
-                        <div className="form-group-destino">
-                            <label htmlFor="localizacao" className="form-label">Localização</label>
-                            <input
-                                type="text"
-                                id="localizacao"
-                                className="form-control"
-                                placeholder="Insira a localização"
-                                {...register("localizacao", {
-                                    required: {
-                                        value: true,
-                                        message: "Esse campo é obrigatório"
-                                    },
-                                
-                                })}
-                            />
-                            {errors.localizacao && <span className='text-danger text-sm'>{errors.localizacaomessage}</span>}
+                            <div className="mb-3 form-group descricao">
+                                <label htmlFor="descricao" className="form-label">Descrição</label>
+                                <input
+                                    type="text"
+                                    id="descricao"
+                                    className="form-control"
+                                    placeholder="Descreva o local"
+                                    {...register("descricao", {
+                                        required: {
+                                            value: true,
+                                            message: "Esse campo é obrigatório",
+                                        },
+                                    })}
+                                />
+                                {errors.descricao && <span className="text-danger text-sm">{errors.descricao.message}</span>}
+                            </div>
                         </div>
 
-                        <EnderecoComponent />
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label htmlFor="cep" className="form-label">CEP</label>
+                                <input
+                                    type="text"
+                                    id="cep"
+                                    className="form-control"
+                                    placeholder="Digite seu CEP"
+                                    value={entrada}
+                                    onChange={lidarComMudancaEntrada}
+                                />
+                                <button type="button" onClick={buscarInformacoes} className="btn btn-primary mt-2">
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
 
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label htmlFor="rua" className="form-label">Rua</label>
+                                <input
+                                    type="text"
+                                    id="rua"
+                                    className="form-control"
+                                    placeholder="Rua"
+                                    {...register("rua")}
+                                    value={endereco.rua}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="bairro" className="form-label">Bairro</label>
+                                <input
+                                    type="text"
+                                    id="bairro"
+                                    className="form-control"
+                                    placeholder="Bairro"
+                                    {...register("bairro")}
+                                    value={endereco.bairro}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="cidade" className="form-label">Cidade</label>
+                                <input
+                                    type="text"
+                                    id="cidade"
+                                    className="form-control"
+                                    placeholder="Cidade"
+                                    {...register("cidade")}
+                                    value={endereco.cidade}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="estado" className="form-label">Estado</label>
+                                <input
+                                    type="text"
+                                    id="estado"
+                                    className="form-control"
+                                    placeholder="Estado"
+                                    {...register("estado")}
+                                    value={endereco.estado}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="latitude" className="form-label">Latitude</label>
+                                <input
+                                    type="text"
+                                    id="latitude"
+                                    className="form-control"
+                                    placeholder="Latitude"
+                                    {...register("latitude")}
+                                    value={endereco.latitude}
+                                    readOnly
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="longitude" className="form-label">Longitude</label>
+                                <input
+                                    type="text"
+                                    id="longitude"
+                                    className="form-control"
+                                    placeholder="Longitude"
+                                    {...register("longitude")}
+                                    value={endereco.longitude}
+                                    readOnly
+                                />
+                            </div>
+                        </div>
 
-                        <div className="form-group-destino">
-                            <label htmlFor="coordenadasGeograficas" className="form-label">Coordenadas Geograficas</label>
-                            <input
-                                type="text"
-                                id="coordenadasGeograficas"
-                                className="form-control"
-                                placeholder="00 00 00.0, 0 00 00.0"
-                                
-                            />
+                        <div className="btn-container">
+                            <button className="btn btn-success" type="submit" disabled={isSubmitting}>
+                                {isSubmitting ? 'Carregando...' : 'Cadastrar'}
+                            </button>
                             
+                            <button type="button" className="btn btn-danger">Deletar</button>
                         </div>
-                    </div>
-
-                  
-
-                    <button className="btn btn-success" type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? 'Carregando...' : 'Cadastrar'}
-                    </button>
-                    <button type="button" className="btn btn-secondary">Atualizar</button>
-                    <button type="button" className="btn btn-danger">Deletar</button>
-                </form>
-
-            </div>
-
-        </main>
-        
-
-        </>
-    )
+                    </form>
+                </div>
+            </main>
+        </div>
+    );
 }
 
-export default CadastroDestino
+export default CadastroDestino;
