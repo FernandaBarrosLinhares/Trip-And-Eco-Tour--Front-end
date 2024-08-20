@@ -6,7 +6,7 @@ function MenuComponent(){
    return(
        <>
        <div className="sidebar">
-           {/* <h1>Trip And</h1><h1> Eco Tour</h1> */}
+          
            <img 
                         className="mb-4 logo" 
                         src="https://http2.mlstatic.com/D_NQ_NP_813708-MLU70381945405_072023-O.webp" 
