@@ -3,7 +3,11 @@
 O Trip and Eco Tour, é uma plataforma que visa promover viagens sustentáveis e experiências positivas para os usuários, fornecendo acesso a informações sobre destinos turísticos, praias, atrações naturais e atividades recreativas. Os usuários podem explorar e descobrir novos destinos, encontrar dicas de viagem sustentável e compartilhar suas experiências.
 
 
-<!-- <img alt="Tela1" src=""> -->
+<img alt="Login" src="src/assets/telaLogin.png">
+<img alt="Cadastro Usuario" src="src/assets/paginaCadastroUsuario.png">
+<img alt="Home" src="src/assets/dashboard.png">
+<img alt="Cadastro Destino" src="src/assets/cadastroDestino.png">
+<img alt="Listagem" src="src/assets/listagemDestinos.png">
 
 
 ### Trabalho de conclusão de módulo do curso Analista de desenvolvimento web- Senai SC
@@ -38,6 +42,7 @@ git clone https://github.com/FernandaBarrosLinhares/Trip-And-Eco-Tour--Front-end
 
 npm insttall
 npm dev run
+npx json-server db.json
 
 ## Melhorias
 
